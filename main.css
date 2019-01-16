@@ -5,8 +5,42 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.flip-container {
+  background-color: transparent;
+  perspective: 1000px;
+}
+
+.flip-container-inner.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.flip-container-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-container-front,
+.flip-container-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.flip-container-back {
+  background-color: dodgerblue;
+  color: white;
+  transform: rotateY(180deg);
+}
+
 #bg-image,
-#container {
+#container,
+#back-container,
+.flip-container {
   position: absolute;
   margin: auto;
   left: 0px;
@@ -26,7 +60,7 @@ body {
 
 #container {
   display: grid;
-  grid-template-rows: 40% 25% 35%;
+  grid-template-rows: 39% 24% 30% 7%;
   grid-template-columns: 33% 33% 33%;
 }
 
@@ -125,4 +159,22 @@ hr {
   text-align: justify;
   margin-left: 2em;
   margin-right: 2em;
+}
+
+#flip {
+  grid-area: 4 / 2 / span 1 / span 1;
+  color: white;
+  cursor: pointer;
+}
+
+/* Back Side */
+#back-container {
+  display: grid;
+  grid-template-rows: 15% 75% 10%;
+}
+
+#flip-back {
+  grid-area: 3 / span 1;
+  align-self: end;
+  z-index: 100;
 }
