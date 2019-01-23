@@ -192,12 +192,12 @@ hr {
 /* Back Side */
 #back-container {
   display: grid;
-  grid-template-rows: 15% 75% 10%;
+  grid-template-rows: 15% 15% 62% 8%;
   align-items: center;
 }
 
 #flip-back {
-  grid-area: 3 / span 1;
+  grid-area: 4 / span 1;
   align-self: end;
   z-index: 100;
   cursor: pointer;
@@ -207,16 +207,11 @@ hr {
   opacity: 0.5;
 }
 
-/* Title  */
-#title {
-  display: grid;
-  grid-template-columns: 3fr 2fr;
-  z-index: 100;
-}
-
-#title h2 {
+/* Title */
+h2 {
   color: rgba(226, 12, 12, 0.74);
-  justify-self: end;
+  text-align: center;
+  z-index: 100;
 }
 
 #gitLogo {
