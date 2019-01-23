@@ -34,23 +34,13 @@ body {
   height: 100%;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
+  overflow: hidden;
 }
 
 .flip-container-back {
   background-color: white;
   color: black;
   transform: rotateY(180deg);
-}
-
-#bg-image {
-  position: absolute;
-  margin: auto;
-  left: 0px;
-  right: 0px;
-  top: 0px;
-  bottom: 0px;
-  width: 495px;
-  height: 635px;
 }
 
 #bg-image-back,
@@ -68,8 +58,18 @@ body {
 }
 
 #bg-image {
-  filter: blur(2px);
-  -webkit-filter: blur(2px);
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+  -moz-filter: blur(8px);
+  -o-filter: blur(8px);
+  -ms-filter: blur(8px);
+
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  width: 500px;
+  height: 640px;
 }
 
 #container {
@@ -92,6 +92,13 @@ body {
   text-align: center;
   text-decoration: none;
   border-radius: 50%;
+}
+
+.fa:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  width: 18px;
+  height: 18px;
 }
 
 /* Twitter */
@@ -179,12 +186,14 @@ hr {
   grid-area: 4 / 2 / span 1 / span 1;
   color: white;
   cursor: pointer;
+  text-decoration-line: underline;
 }
 
 /* Back Side */
 #back-container {
   display: grid;
   grid-template-rows: 15% 75% 10%;
+  align-items: center;
 }
 
 #flip-back {
@@ -196,4 +205,43 @@ hr {
 
 #bg-image-back {
   opacity: 0.5;
+}
+
+/* Title  */
+#title {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  z-index: 100;
+}
+
+#title h2 {
+  color: rgba(226, 12, 12, 0.74);
+  justify-self: end;
+}
+
+#gitLogo {
+  width: 60px;
+  opacity: 0.8;
+}
+
+/* Githubs Links */
+
+#links-github {
+  z-index: 100;
+}
+
+/* Links balise <a> */
+#links-github a {
+  text-decoration: none;
+}
+
+#links-github a:visited {
+  color: black;
+}
+
+/* Link balise <p> */
+#links-github p {
+  font-size: large;
+  font-weight: 500;
+  text-transform: uppercase;
 }
